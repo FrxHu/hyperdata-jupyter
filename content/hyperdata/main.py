@@ -1,6 +1,8 @@
 import hyperdata.visualize
 import hyperdata.db
 
+%pip install python-dotenv
+
 def plot(stream_name,table_name):
     df = db.read_table(table_name,db.load_credentials())
     visualize.animate(stream_name,df)
