@@ -1,7 +1,7 @@
 import hyperdata.visualize
 import hyperdata.db
 
-print "Import was successful"
+print("Import was successful")
 
 def plot(stream_name,table_name):
     df = db.read_table(table_name,db.load_credentials())
