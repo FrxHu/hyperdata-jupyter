@@ -1,3 +1,5 @@
+import piplite
+await piplite.install(["psycopg2", "python-dotenv"])
 import os 
 import psycopg2 as db
 from dotenv import load_dotenv
