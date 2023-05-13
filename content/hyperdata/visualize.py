@@ -1,4 +1,4 @@
-from db import read_table,load_credentials
+from hyperdata.db import read_table,load_credentials
 import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import HTML
