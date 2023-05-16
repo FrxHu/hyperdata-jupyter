@@ -14,6 +14,9 @@ jobs:
     env:
       DB_NAME: ${{ secrets.DB_NAME }}
     steps:
+      - name: Set up env var
+        run: |
+          export DB_NAME=testing
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
