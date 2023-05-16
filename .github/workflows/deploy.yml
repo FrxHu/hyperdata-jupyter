@@ -14,9 +14,7 @@ jobs:
     steps:
       - name: Retrieve db_name secret
         env:
-          db_name: ${{ secrets.DB_NAME }}
-        run: |
-          export KECS="kecske macska"
+          DB_NAME: ${{ secrets.DB_NAME }}
 
   build:
     runs-on: ubuntu-latest
