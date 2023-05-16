@@ -1,5 +1,5 @@
 import os 
-import pg8000.native as db
+import pg8000.native
 from dotenv import load_dotenv
 import pandas as pd
 
@@ -15,6 +15,6 @@ def load_credentials():
     return creds
 
 def read_table(name,creds):
-    conn = db.connect(user=creds['db_user'],password=creds['db_password'],host=creds['db_host'],port=creds['db_port'],database=creds['db_name'])
+    conn = pg8000.native.Connection(user=creds['db_user'],password=creds['db_password'],host=creds['db_host'],port=creds['db_port'],database=creds['db_name'])
     df = pd.read_sql(f'select * from {name}',conn)
     return df
