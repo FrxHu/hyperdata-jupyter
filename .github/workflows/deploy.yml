@@ -9,6 +9,16 @@ on:
       - '*'
 
 jobs:
+  set-variables:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve db_name secret
+        env:
+          db_name: ${{ secrets.DB_NAME }}
+        run: |
+          export KECS="kecske macska"
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -46,15 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-  
-  
-  set-variables:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Retrieve db_name secret
-        env:
-          db_name: ${{ secrets.DB_NAME }}
-        run: |
-          echo "kecske macska"
-  
