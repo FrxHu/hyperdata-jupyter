@@ -10,7 +10,6 @@ on:
 
 jobs:
   set-variables:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Retrieve db_name secret
