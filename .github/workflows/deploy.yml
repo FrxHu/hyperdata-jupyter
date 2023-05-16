@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Retrieve db_name secret
+      - name: Build
         env:
           DB_NAME: ${{ secrets.DB_NAME }}
         run: |
