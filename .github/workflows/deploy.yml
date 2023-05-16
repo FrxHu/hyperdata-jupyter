@@ -56,5 +56,5 @@ jobs:
         env:
           db_name: ${{ secrets.DB_NAME }}
         run: |
-          export DB_NAME = "$db_name"
+          export DB_NAME="$db_name"
   
