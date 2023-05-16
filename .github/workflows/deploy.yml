@@ -49,6 +49,7 @@ jobs:
   
   
   set-variables:
+    needs: build
     runs-on: ubuntu-lates
     steps:
       - name: Retrieve secret
