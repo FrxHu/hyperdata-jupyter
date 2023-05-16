@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up env var
+        env:
+          DB_NAME: ${{ secrets.DB_NAME }}
         run: |
-          echo 'export DB_NAME=kecske' >> /etc/environment
-          source /etc/environment
+          export DB_NAME="$DB_NAME"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
