@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up env var
+        run: |
+          echo 'export DB_NAME=kecske' >> /etc/environment
+          source /etc/environment
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
@@ -46,6 +50,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: Set up env var
-        run: |
-          cat /etc/environment
