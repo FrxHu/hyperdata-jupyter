@@ -10,7 +10,7 @@ def load_credentials():
         'db_password' : os.getenv('db_password'),
         'db_host' : os.getenv('db_host'),
         'db_port' : os.getenv('db_port'),
-        'db_name' : os.getenv('db_name')
+        'db_name' : os.getenv('DB_NAME')
     }
     return creds
 
