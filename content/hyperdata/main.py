@@ -8,3 +8,6 @@ def plot(stream_name,table_name):
 def data(stream_name,table_name):
     df = db.read_table(table_name,db.load_credentials())
     return df
+
+def print_test(test_string):
+	print(test_string)    
