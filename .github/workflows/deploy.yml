@@ -46,3 +46,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+  
+  
+  set-variables:
+    needs: build
+    runs-on: ubuntu-lates
+    steps:
+      - name: Retrieve secret
+        env:
+          db_name: ${{ secrets.DB_NAME }}
+        run: |
+          export DB_NAME = "$db_name"
+  
