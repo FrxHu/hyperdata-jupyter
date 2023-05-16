@@ -11,12 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_NAME: ${{ secrets.DB_NAME }}
     steps:
-      - name: Build
-        env:
-          DB_NAME: ${{ secrets.DB_NAME }}
-        run: |
-          echo "Set variable to : $DB_NAME"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
